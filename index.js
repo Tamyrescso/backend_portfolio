@@ -8,6 +8,10 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+app.get('/send', async (_req,res) => {
+  res.send('Use the following structure to make a POST requisition: { name: xxxxx, email: xxx@xxx.com, message: xxxxxxxxx }')
+})
+
 app.post('/send', async (req, res) => {
 
   const { name, email, content } = req.body;
